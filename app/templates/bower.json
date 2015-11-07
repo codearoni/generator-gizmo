@@ -1,0 +1,20 @@
+{
+  "name": "<%= appName %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDesc %>",
+  "main": "root/index.html",
+  "authors": [
+    "<%= author %>"
+  ],
+  "license": "<%= license %>",
+  "ignore": [
+    "**/.",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

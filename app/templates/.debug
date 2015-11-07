@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.<%= companyName %>.<%= appName %>">
+        <HostList>
+            <!-- Photoshop -->
+            <Host Name="PHXS" Port="2001"/>
+        </HostList>
+    </Extension>
+</ExtensionList>

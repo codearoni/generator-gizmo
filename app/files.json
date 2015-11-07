@@ -1,0 +1,15 @@
+[
+  "./package.json",
+  "./bower.json",
+  "./.gitignore",
+  "./gulpfile.js",
+  "./jsx/rootscript.jsx",
+  "./CSXS/manifest.xml",
+  "./sass/app.scss",
+  "./ext/CSInterface.js",
+  "./root/index.html",
+  "./app/app.js",
+  "./.debug",
+  "./webpack.config.js",
+  "./bundle/entry.js"
+]

@@ -1,0 +1,7 @@
+node_modules
+bower_components
+bin
+build
+dist
+docs
+.yo-rc.json

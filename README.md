@@ -1,6 +1,7 @@
 # generator-gizmo
 
 [![Dependencies](http://img.shields.io/david/codearoni/generator-gizmo.svg?style=flat-square)](https://david-dm.org/codearoni/generator-gizmo)
+[![Gitter](http://img.shields.io/badge/Gitter-room-brightgreen.svg?style=flat-square)](https://gitter.im/codearoni/generator-gizmo)
 
 > Yeoman generator for Adobe Photoshop Extensions
 

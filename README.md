@@ -12,6 +12,8 @@ Adobe's extension technology is incredibly powerful, allowing developers to push
 
 ## Usage
 
+More information in the [usage documentation page](docs/usage.md)
+
 ### Installation
 
 ##### Gizmo requires `yeoman`, `gulp` and `bower`:
@@ -29,7 +31,7 @@ npm install -g generator-gizmo
 * **Windows:** C:\Program Files (x86)\Common Files\Adobe\CEP\extensions
 * **Mac:** /Library/Application Support/Adobe/CEP/extensions
 
-##### Create a new directory, and go into:
+##### Create a new directory, and go to it:
 ```
 mkdir my_extension && cd $_
 ```
@@ -47,7 +49,33 @@ yo gizmo
 ![Logo](docs/assets/sass.png)
 ![Logo](docs/assets/jshint.png)
 
+* **Webpack** - Your front-end source files will be bundled for deployment.
+* **Multiple JSX** - Gizmo preconfigures your extension to load all extendscript files in your /jsx/ directory. No additional code needed.
+* **Polyfills** - Gizmo provides polyfills for JSON and Array in Extendscript.
+* **SASS** - No additional configuration needed to get SASS in your extension.
+* **Bower and NPM** - Manage your dependencies properly with Bower and NPM.
+* **JSHint** - Debug your extension with the power of JSHint.
+* **Compilation** - Gizmo takes the hassle out of compiling your ZXP file and reduces it to a single command.
+
+## Roadmap
+
+* Confirm cross-platform compatibility
+* Additional polyfills for Extendscript
+* Add support for additional Adobe tools (AI, AE, etc)
+* JSDoc integration
+* Optional scaffolding for popular frameworks (Angular, Backbone, etc)
+* Proper test coverage and Travis-CI integration
+
+## Other Resources and Special Thanks
+
+Thanks to the following people and groups for their contributions to the extension ecosystem. Gizmo is built on top of what they have shared and created.
+
+* Davide Barranca - [Blog](http://www.davidebarranca.com/)
+* Andy Hall - [Blog](http://aphall.com/2014/08/cep-mega-guide-en/)
+* David Deraedt - [Github](https://github.com/davidderaedt)
+* Hallgrimur Bjornsson - [Blog](https://medium.com/@HallgrimurTh/the-other-api-23357c99c774)
+* CEP Cookbook 2015 - [Link](https://github.com/Adobe-CEP/CEP-Resources/wiki/CEP-6-HTML-Extension-Cookbook-for-CC-2015)
+
 ## License
 
 MIT
-

@@ -1,5 +1,7 @@
 # generator-gizmo
 
+[![Join the chat at https://gitter.im/codearoni/generator-gizmo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/codearoni/generator-gizmo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Dependencies](http://img.shields.io/david/codearoni/generator-gizmo.svg?style=flat-square)](https://david-dm.org/codearoni/generator-gizmo)
 [![Gitter](http://img.shields.io/badge/Gitter-room-brightgreen.svg?style=flat-square)](https://gitter.im/codearoni/generator-gizmo)
 

@@ -46,6 +46,8 @@ gulp sass && gulp webpack && gulp wire
 
 ## Quick Build
 
+Download your system's [signing toolkit](http://labs.adobe.com/downloads/extensionbuilder3.html). Place the unpackaged ZxpSignCmd.exe in the /bin/ directory.
+
 Run the following command(s), your zxp will be in the build directory
 ```
 gulp cert && gulp build

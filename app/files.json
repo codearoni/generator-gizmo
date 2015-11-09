@@ -1,7 +1,6 @@
 [
   "./package.json",
   "./bower.json",
-  "./.gitignore",
   "./gulpfile.js",
   "./jsx/rootscript.jsx",
   "./CSXS/manifest.xml",

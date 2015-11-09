@@ -43,10 +43,17 @@ var GizmoGenerator = yeoman.generators.Base.extend({
 
   writeFiles : function () {
     for(var i = 0; i < files.length; i++) {
+      // copy all template files
       this.fs.copyTpl(
         this.templatePath(files[i]),
         this.destinationPath(files[i]),
         responses
+      );
+      // gitignore must be renamed at runtime
+      this.fs.copyTpl(
+        this.templatePath('gitignoreTemplate'),
+        this.destinationPath('.gitignore'),
+        {title: 'Generating .gitignore file'}
       );
     }
   },

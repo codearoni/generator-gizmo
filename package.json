@@ -1,6 +1,6 @@
 {
   "name": "generator-gizmo",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "preferGlobal": true,
   "description": "A yeoman generator for Adobe Photoshop Extensions",
   "main": "app/index.js",

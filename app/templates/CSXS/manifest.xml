@@ -22,6 +22,9 @@
         <Resources>
           <MainPath>./root/index.html</MainPath>
           <ScriptPath>./jsx/rootscript.jsx</ScriptPath>
+          <CEFCommandLine>
+            <Parameter>--enable-nodejs</Parameter>
+          </CEFCommandLine>
         </Resources>
         <Lifecycle>
           <AutoVisible>true</AutoVisible>

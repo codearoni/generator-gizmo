@@ -5,6 +5,7 @@
   "description": "A yeoman generator for Adobe Photoshop Extensions",
   "main": "app/index.js",
   "scripts": {
+    "hint": "jshint ./app/templates/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,7 +27,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jshint": "^2.9.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/codearoni/generator-gizmo.git"

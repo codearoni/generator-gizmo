@@ -4,6 +4,8 @@
 
 [![Dependencies](http://img.shields.io/david/codearoni/generator-gizmo.svg?style=flat-square)](https://david-dm.org/codearoni/generator-gizmo)
 
+[![Build Status](https://travis-ci.org/codearoni/generator-gizmo.svg?branch=master)](https://travis-ci.org/codearoni/generator-gizmo)
+
 > Yeoman generator for Adobe Photoshop Extensions
 
 ## About

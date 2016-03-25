@@ -6,7 +6,7 @@
   "main": "app/index.js",
   "scripts": {
     "hint": "jshint ./app/templates/**/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Travis CI Test\" && exit 0"
   },
   "keywords": [
     "adobe",

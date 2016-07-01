@@ -1,18 +1,19 @@
 'use strict';
 
-var yeoman = require('yeoman-generator');
+var generators = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 var mkdirp = require('mkdirp');
-var _ = require('lodash');
 
 var prompts = require('./prompts');
 var files = require('./files.json');
 var responses = {};
+var log;
 
-var GizmoGenerator = yeoman.generators.Base.extend({
+var GizmoGenerator = generators.Base.extend({
   constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+    generators.Base.apply(this, arguments);
+    log = this.log;
 
     this.argument('appName', {
       type: String,
@@ -21,24 +22,16 @@ var GizmoGenerator = yeoman.generators.Base.extend({
   },
 
   info: function () {
-    this.log(yosay(
+    log(yosay(
         chalk.red('Allo!') + '\n' +
-        chalk.yellow('This is ') + chalk.inverse('Gizmo ') + chalk.yellow('- a generator for Adobe Photoshop Extensions!')
+        chalk.yellow('This is ') + chalk.inverse('Gizmo') + chalk.yellow(' - a generator for Adobe Photoshop Extensions!')
     ));
   },
 
   askQuestions: function () {
-    var done = this.async();
-    this.prompt(prompts, function (props) {
-      responses = props;
-      this.props = _.merge(this.props, props);
-      this.config.set('props', this.props);
-      done();
+    return this.prompt(prompts).then(function (answers) {
+      responses = answers;
     }.bind(this));
-  },
-
-  debug: function () {
-    this.log(JSON.stringify(responses));
   },
 
   writeFiles : function () {
@@ -63,7 +56,7 @@ var GizmoGenerator = yeoman.generators.Base.extend({
       if (err) {
         console.error(err);
       } else {
-        console.log('bin directory created');
+        log('bin directory created');
       }
     });
 
@@ -71,7 +64,7 @@ var GizmoGenerator = yeoman.generators.Base.extend({
       if (err) {
         console.error(err);
       } else {
-        console.log('dist directory created');
+        log('dist directory created');
       }
     });
 
@@ -79,7 +72,7 @@ var GizmoGenerator = yeoman.generators.Base.extend({
       if (err) {
         console.error(err);
       } else {
-        console.log('docs directory created');
+        log('docs directory created');
       }
     });
 
@@ -87,7 +80,7 @@ var GizmoGenerator = yeoman.generators.Base.extend({
       if (err) {
         console.error(err);
       } else {
-        console.log('build directory created');
+        log('build directory created');
       }
     });
   }

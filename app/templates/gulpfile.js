@@ -144,12 +144,3 @@ gulp.task('build:compile', false, function (done) {
     done();
   });
 });
-
-function InsertSpaces () {
-  var builtString = '';
-  var args = Array.prototype.slice.call(arguments);
-  args.forEach(function(val) {
-      builtString = builtString + val + ' ';
-  });
-  return builtString;
-};

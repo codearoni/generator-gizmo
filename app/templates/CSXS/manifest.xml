@@ -6,14 +6,14 @@
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>
-      <Host Name="PHXS" Version="[16.0,16.9]" />
-      <Host Name="PHSP" Version="[16.0,16.9]" />
+      <Host Name="PHXS" Version="16.0" />
+      <Host Name="PHSP" Version="16.0" />
     </HostList>
     <LocaleList>
       <Locale Code="All" />
     </LocaleList>
     <RequiredRuntimeList>
-      <RequiredRuntime Name="CSXS" Version="6.0" />
+      <RequiredRuntime Name="CSXS" Version="7.0" />
     </RequiredRuntimeList>
   </ExecutionEnvironment>
   <DispatchInfoList>

@@ -1,8 +1,8 @@
 var gulp = require('gulp-help')(require('gulp')),
   jshint = require('gulp-jshint'),
   gutil = require('gulp-util'),
+  log = gutil.log,
   inject = require('gulp-inject'),
-  shell = require('gulp-shell'),
   sass = require('gulp-sass'),
   del = require('del'),
   path = require('path'),
@@ -11,8 +11,9 @@ var gulp = require('gulp-help')(require('gulp')),
   webpack = require('webpack'),
   webpackConfig = require('./webpack.config'),
   pkg = require('./package.json'),
-  runSequence = require('run-sequence');
-
+  runSequence = require('run-sequence'),
+  zxpSignCmd = require('zxp-sign-cmd');
+  
 // Files that will be run against JSHint
 var allSrcFiles = [
     'app/**/*.js',
@@ -37,9 +38,7 @@ var allSrcFiles = [
   // The selfSigned certificate used to compile the extension
   certPath = path.join('./bin', '<%= appName %>Cert.p12'),
   // The path and name of the compiled ZXP file
-  zxpPath = path.join('./build', '<%= appName %>.zxp'),
-  // The path to the zxpSignCmd binary
-  binPath = path.join('./bin', 'ZXPSignCmd');
+  zxpPath = path.join('./build', '<%= appName %>.zxp');
 
 gulp.task('hint', 'Run JSHint against your project files', function () {
   return gulp.src(allSrcFiles)
@@ -69,7 +68,7 @@ gulp.task('sass', 'Build sass files', function () {
 gulp.task('webpack', 'Compile your webpack bundle', function (callback) {
   webpack(webpackConfig, function(err, stats) {
           if(err) throw new gutil.PluginError("webpack", err);
-          gutil.log("[webpack]", stats.toString({
+          log("[webpack]", stats.toString({
 
           }));
           callback();
@@ -85,16 +84,25 @@ gulp.task('watch', 'Build based on file changes', function () {
   });
 });
 
-gulp.task('cert', 'Create a signing cert for your extension', shell.task([
-    InsertSpaces(binPath,
-      '-selfSignedCert',
-      '<%= country %>',
-      '<%= province %>',
-      '<%= companyName %>',
-      '<%= appName %>',
-      '01189998819991197253',
-      path.join('./bin', '<%= appName %>Cert.p12'))
-]));
+gulp.task('cert', 'Create a signing cert for your extension', function (done) {
+    var certOptions = {
+      country: '<%= country %>',
+      province: '<%= province %>',
+      org: '<%= companyName %>',
+      name: '<%= appName %>',
+      password: 'ps_<%= appName %>',
+      output: certPath
+    };
+    zxpSignCmd.selfSignedCert(certOptions, function (err, result) {
+        if (err) {
+          log(err.message);
+        }
+        if (result) {
+          log(result);
+        }
+        done();
+    });
+});
 
 gulp.task('build', 'Compile the bundled ZXP', function (cb) {
   runSequence('build:clean', 'sass', 'webpack', 'wire', 'build:dist', 'build:pkgDeps', 'build:compile', cb);
@@ -119,14 +127,23 @@ gulp.task('build:pkgDeps', false, function () {
   }
 });
 
-gulp.task('build:compile', false, shell.task([
-  InsertSpaces(binPath,
-    '-sign',
-    './dist',
-    zxpPath,
-    certPath,
-    '01189998819991197253')
-]));
+gulp.task('build:compile', false, function (done) {
+  var buildOptions = {
+    input: './dist',
+    output: zxpPath,
+    cert: certPath,
+    password: 'ps_<%= appName %>'
+  };
+  zxpSignCmd.sign(buildOptions, function (err, result) {
+    if (err) {
+      log(err.message);
+    }
+    if (result) {
+      log(result);
+    }
+    done();
+  });
+});
 
 function InsertSpaces () {
   var builtString = '';

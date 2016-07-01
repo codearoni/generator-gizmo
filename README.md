@@ -1,10 +1,9 @@
 # generator-gizmo
 
 [![Join the chat at https://gitter.im/codearoni/generator-gizmo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/codearoni/generator-gizmo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Dependencies](http://img.shields.io/david/codearoni/generator-gizmo.svg?style=flat-square)](https://david-dm.org/codearoni/generator-gizmo)
-
 [![Build Status](https://travis-ci.org/codearoni/generator-gizmo.svg?branch=master)](https://travis-ci.org/codearoni/generator-gizmo)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 > Yeoman generator for Adobe Photoshop Extensions
 
@@ -77,7 +76,3 @@ Thanks to the following people and groups for their contributions to the extensi
 * David Deraedt - [Github](https://github.com/davidderaedt)
 * Hallgrimur Bjornsson - [Blog](https://medium.com/@HallgrimurTh/the-other-api-23357c99c774)
 * CEP Cookbook 2015 - [Link](https://github.com/Adobe-CEP/CEP-Resources/wiki/CEP-6-HTML-Extension-Cookbook-for-CC-2015)
-
-## License
-
-MIT

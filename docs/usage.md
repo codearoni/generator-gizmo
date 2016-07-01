@@ -39,25 +39,26 @@ yo gizmo
 
 ## Quick Start
 
-Run the following command(s) and then open Photshop
-```
-gulp sass && gulp webpack && gulp wire
-```
+After the generator finishes building your files, be sure to install the node and bower modules
 
-## Quick Build
-
-Download your system's [signing toolkit](http://labs.adobe.com/downloads/extensionbuilder3.html). Place the unpackaged ZxpSignCmd.exe in the /bin/ directory.
+```
+npm install && bower install
+```
 
 Run the following command(s), your zxp will be in the build directory
 ```
 gulp cert && gulp build
 ```
+You only need to run the cert task once.
+The build command will bootstrap your project, build the bundle, generator CSS, and inject dependencies onto your index.
+
+Congrats! Open Photoshop to see your extension.
 
 ## Gulp Tasks
 
 * `gulp` or `gulp help` - Show a list of all available tasks
-* `gulp build` - Build your ZXP file. Requires a certificate to be generate with `gulp cert`.
-* `gulp cert` - Generates a certificate for signing in your bin folder.
+* `gulp build` - Build your ZXP file. Requires a certificate to be generated with `gulp cert`.
+* `gulp cert` - Generates a certificate for signing in your bin folder. You should only run this when you need to update your certificate.
 * `gulp hint` - Run JSHint against your source files.
 * `gulp sass` - Build your SASS files.
 * `gulp watch` - Watch various source files and re-run tasks depending on what changes.

@@ -6,9 +6,15 @@ node_js:
 os:
     - osx
 
+cache:
+    directories:
+        - node_modules
+
+matrix:
+    fast_finish: true
+
 before_install:
     - npm install -g npm@latest
-    - npm install -g yo
 
 install:
     - npm install

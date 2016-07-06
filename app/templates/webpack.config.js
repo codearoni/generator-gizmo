@@ -1,4 +1,5 @@
 'use strict';
+
 var path = require('path');
 
 module.exports = {
@@ -8,4 +9,4 @@ module.exports = {
     path: path.join(__dirname, 'bundle'),
     filename: 'bundle.js'
   }
-}
+};

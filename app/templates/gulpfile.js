@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp-help')(require('gulp')),
   jshint = require('gulp-jshint'),
   gutil = require('gulp-util'),
@@ -121,7 +123,7 @@ gulp.task('build:dist', false, function () {
 
 gulp.task('build:pkgDeps', false, function () {
   for(var dep in pkg.dependencies) {
-    fs.copy(path.join('./node_modules/', dep), path.join('./dist', 'node_modules', dep), function (err) {
+    fs.copy(path.join('./node_modules/', dep), path.join('./dist', 'node_modules', dep), function (err) { // jshint ignore:line
         if(err) {
           throw new gutil.PluginError('pkgDeps', err);
         }

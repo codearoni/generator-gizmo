@@ -46,4 +46,4 @@ module.exports = [
     "message": "Enter license type: ",
     "default": "MIT"
   }
-]
+];

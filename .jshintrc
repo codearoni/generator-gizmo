@@ -1,0 +1,12 @@
+{
+    "node": true,
+    "browser": true,
+    "eqeqeq": true,
+    "newcap": true,
+    "strict": true,
+    "globals": {
+        "CSInterface": true,
+        "SystemPath": true,
+        "jQuery": true
+    }
+}

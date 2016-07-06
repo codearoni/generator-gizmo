@@ -5,8 +5,9 @@
   "description": "A yeoman generator for Adobe Photoshop Extensions",
   "main": "app/index.js",
   "scripts": {
-    "hint": "jshint ./app/templates/**/*.js",
-    "test": "echo \"Travis CI Test\" && exit 0"
+    "hint": "jshint ./app",
+    "test": "./node_modules/.bin/mocha",
+    "test-ci": "npm run hint && npm run test"
   },
   "keywords": [
     "adobe",
@@ -27,7 +28,10 @@
     "node": ">=4.0.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "mocha": "^2.5.3",
+    "yeoman-assert": "^2.2.1",
+    "yeoman-test": "^1.4.0"
   },
   "repository": {
     "type": "git",

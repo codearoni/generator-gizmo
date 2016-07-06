@@ -1,3 +1,5 @@
+'use strict';
+
 (function($){
   var csInterface = new CSInterface();
   var jsxPath = csInterface.getSystemPath(SystemPath.EXTENSION) + '/jsx';

@@ -19,6 +19,7 @@ var GizmoGenerator = generators.Base.extend({
       type: String,
       required: false
     });
+
   },
 
   info: function () {
@@ -51,39 +52,10 @@ var GizmoGenerator = generators.Base.extend({
     }
   },
 
-  createDirectories : function () {
-    mkdirp(this.destinationPath('bin'), function (err) {
-      if (err) {
-        console.error(err);
-      } else {
-        log('bin directory created');
-      }
-    });
-
-    mkdirp(this.destinationPath('dist'), function (err) {
-      if (err) {
-        console.error(err);
-      } else {
-        log('dist directory created');
-      }
-    });
-
-    mkdirp(this.destinationPath('docs'), function (err) {
-      if (err) {
-        console.error(err);
-      } else {
-        log('docs directory created');
-      }
-    });
-
-    mkdirp(this.destinationPath('build'), function (err) {
-      if (err) {
-        console.error(err);
-      } else {
-        log('build directory created');
-      }
-    });
+  installDeps : function () {
+    this.installDependencies();
   }
+  
 });
 
 module.exports = GizmoGenerator;

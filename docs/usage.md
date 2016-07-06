@@ -1,6 +1,6 @@
 # Usage
 
-## Create your project
+## Prerequisites
 
 ##### Gizmo requires `yeoman`, `gulp` and `bower`:
 ```
@@ -12,7 +12,7 @@ npm install -g yo gulp bower
 npm install -g generator-gizmo
 ```
 
-### Run
+## Creating your project
 * Be sure you are in your extension directory.
 * **Windows:** C:\Program Files (x86)\Common Files\Adobe\CEP\extensions
 * **Mac:** /Library/Application Support/Adobe/CEP/extensions

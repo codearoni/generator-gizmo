@@ -39,6 +39,8 @@ var allSrcFiles = [
   certPath = path.join('./bin', '<%= appName %>Cert.p12'),
   // The path and name of the compiled ZXP file
   zxpPath = path.join('./build', '<%= appName %>.zxp');
+  // Place the css files in the buildFiles array
+  buildFiles.unshift(cssFiles);
 
 gulp.task('hint', 'Run JSHint against your project files', function () {
   return gulp.src(allSrcFiles)

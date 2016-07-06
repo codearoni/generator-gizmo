@@ -6,8 +6,11 @@ node_js:
 os:
     - osx
 
-install:
+before_install:
+    - npm cache clean
     - npm install -g npm@latest
+
+install:
     - npm install
 
 script:

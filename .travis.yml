@@ -7,8 +7,8 @@ os:
     - osx
 
 before_install:
-    - npm cache clean
     - npm install -g npm@latest
+    - npm install -g yo
 
 install:
     - npm install

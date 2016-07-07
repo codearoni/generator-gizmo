@@ -3,5 +3,12 @@ node_js:
     - "4"
     - "6"
 
+os:
+    - osx
+
+install: 
+    - npm install -g npm@latest
+    - npm install
+
 script:
     - npm run test-ci

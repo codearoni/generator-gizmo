@@ -12,16 +12,7 @@
 
 Adobe's extension technology is incredibly powerful, allowing developers to push their tools beyond what Adobe natively provides. However, the toolsets surrounding this technology is currently limited. [Extension Builder 3](http://labs.adobe.com/technologies/extensionbuilder3/) and [Builder for Brackets](http://davidderaedt.github.io/CC-Extension-Builder-for-Brackets/) are both good starting points for developers, but they both suffer the same issue - being tied to a particular IDE and providing little help building your project and automating common tasks. Gizmo is an attempt to recitify this and bring modern web development standards to extension building.
 
-## Usage
-
-More information in the [usage documentation page](docs/usage.md)
-
-### Installation
-
-##### Gizmo requires `yeoman`, `gulp` and `bower`:
-```
-npm install -g yo gulp bower
-```
+## Quick Start
 
 ##### Install `generator-gizmo`:
 ```
@@ -43,6 +34,10 @@ mkdir my_extension && cd $_
 yo gizmo
 ```
 
+## Usage
+
+More information in the [usage documentation page](docs/usage.md)
+
 ## Features
 
 ![Logo](docs/assets/gulp.png)
@@ -53,7 +48,7 @@ yo gizmo
 
 * **Webpack** - Your front-end source files will be bundled for deployment.
 * **Multiple JSX** - Gizmo preconfigures your extension to load all extendscript files in your /jsx/ directory. No additional code needed.
-* **Polyfills** - Gizmo provides polyfills for JSON and Array in Extendscript.
+* **Polyfills** - Gizmo provides polyfills for several key ECMA 5 features.
 * **SASS** - No additional configuration needed to get SASS in your extension.
 * **Bower and NPM** - Manage your dependencies properly with Bower and NPM.
 * **JSHint** - Debug your extension with the power of JSHint.
@@ -61,12 +56,9 @@ yo gizmo
 
 ## Roadmap
 
-* Confirm cross-platform compatibility
-* Additional polyfills for Extendscript
 * Add support for additional Adobe tools (AI, AE, etc)
 * JSDoc integration
 * Optional scaffolding for popular frameworks (Angular, Backbone, etc)
-* Proper test coverage and Travis-CI integration
 
 ## Other Resources and Special Thanks
 

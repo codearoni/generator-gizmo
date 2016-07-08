@@ -32,10 +32,6 @@ Array.prototype.every||(Array.prototype.every=function(callbackfn,thisArg){"use 
  */
 Array.prototype.filter||(Array.prototype.filter=function(fun){"use strict";if(void 0===this||null===this)throw new TypeError;var t=Object(this),len=t.length>>>0;if("function"!=typeof fun)throw new TypeError;for(var res=[],thisArg=arguments.length>=2?arguments[1]:void 0,i=0;i<len;i++)if(i in t){var val=t[i];fun.call(thisArg,val,i,t)&&res.push(val)}return res});
 /**
- * Array.forEach - from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
- */
-Array.prototype.forEach||(Array.prototype.forEach=function(callback,thisArg){var T,k;if(null==this)throw new TypeError(" this is null or not defined");var O=Object(this),len=O.length>>>0;if("function"!=typeof callback)throw new TypeError(callback+" is not a function");for(arguments.length>1&&(T=thisArg),k=0;k<len;){var kValue;k in O&&(kValue=O[k],callback.call(T,kValue,k,O)),k++}});
-/**
  * Array.indexOf - from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  */
 Array.prototype.indexOf||(Array.prototype.indexOf=function(searchElement,fromIndex){var k;if(null==this)throw new TypeError('"this" is null or not defined');var o=Object(this),len=o.length>>>0;if(0===len)return-1;var n=+fromIndex||0;if(Math.abs(n)===1/0&&(n=0),n>=len)return-1;for(k=Math.max(n>=0?n:len-Math.abs(n),0);k<len;){if(k in o&&o[k]===searchElement)return k;k++}return-1});

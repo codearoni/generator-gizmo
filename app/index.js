@@ -3,7 +3,6 @@
 var generators = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
-var mkdirp = require('mkdirp');
 
 var prompts = require('./prompts');
 var files = require('./files.json');
